@@ -88,11 +88,3 @@ Temporary Items
 
 # Linux trash folder which might appear on any partition or disk
 .Trash-*
-.idea/
-app/
-build.gradle
-gradle.properties
-gradle/
-gradlew
-gradlew.bat
-settings.gradle
