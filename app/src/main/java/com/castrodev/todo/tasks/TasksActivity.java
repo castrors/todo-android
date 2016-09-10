@@ -1,9 +1,11 @@
-package com.castrodev.todo;
+package com.castrodev.todo.tasks;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.castrodev.todo.R;
+
+public class TasksActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

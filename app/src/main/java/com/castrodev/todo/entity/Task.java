@@ -6,15 +6,16 @@ import java.util.Date;
  * Created by rodrigocastro on 10/09/16.
  */
 
-public class Todo {
+public class Task {
 
     private String name;
-    private Integer status;
+    private int status;
     private Date createdAt;
     private Date updatedAt;
 
-    public Todo(String name) {
+    public Task(String name) {
         this.name = name;
+        setStatus(TaskStatus.TODO);
     }
 
     public String getName() {
@@ -25,11 +26,11 @@ public class Todo {
         this.name = name;
     }
 
-    public Integer getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(@TaskStatus.Status int status) {
         this.status = status;
     }
 
@@ -49,4 +50,18 @@ public class Todo {
         this.updatedAt = updatedAt;
     }
 
+    public boolean isValid() {
+
+        return !getName().isEmpty() && getStatus() != 0;
+    }
+
+    public boolean isDone() {
+        return getStatus() == TaskStatus.DONE;
+    }
+
+    public void beforeSave(){
+        Date date = new Date();
+        setCreatedAt(date);
+        setUpdatedAt(date);
+    }
 }
